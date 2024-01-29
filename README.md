@@ -1,8 +1,5 @@
-# React + Vite
+This project focuses on converting Imperial units to metric units and vice versa.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Developed for the first assignment of the Web Development II course of the Software Development program at the Southern Alberta Institute of Technology (SAIT).
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Made by Tony Radicchi, Diogo Carbone, Fabiano Miranda and Reanne Hempsall.
