@@ -3,17 +3,30 @@ import { useState } from "react";
 
 const Form = ({ to, from }) => {
   const [result, setResult] = useState(null);
+  const [selectedFrom, setSelectedFrom] = useState(from);
+  const [selectedTo, setSelectedTo] = useState(to);
 
   const onConvertClick = (e) => {
     e.preventDefault();
     const inputValue = document.getElementById("input").value;
     const results = converter(
-      from,
-      to,
+      selectedFrom,
+      selectedTo,
       ...inputValue.split(",").map((value) => parseFloat(value.trim()))
     );
 
     setResult(results);
+  };
+
+  const onSelectionChange = (e) => {
+    const selectedValue = e.target.value;
+    if (selectedValue === "2") {
+      setSelectedFrom(selectedTo);
+      setSelectedTo(selectedFrom);
+    } else {
+      setSelectedFrom(selectedTo);
+      setSelectedTo(selectedFrom);
+    }
   };
 
   return (
@@ -33,12 +46,13 @@ const Form = ({ to, from }) => {
           name=""
           id=""
           className="border border-gray-700 rounded-md mb-2 bg-gray-200"
+          onChange={onSelectionChange}
         >
           <option value="1">
-            {from} to {to}
+            {selectedFrom} to {selectedTo}
           </option>
           <option value="2">
-            {to} to {from}
+            {selectedTo} to {selectedFrom}
           </option>
         </select>
         <button
