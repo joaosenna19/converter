@@ -24,8 +24,8 @@ const Form = ({ to, from }) => {
       setSelectedFrom(selectedTo);
       setSelectedTo(selectedFrom);
     } else {
-      setSelectedFrom(selectedTo);
-      setSelectedTo(selectedFrom);
+      setSelectedFrom(from);
+      setSelectedTo(to);
     }
   };
 
@@ -49,10 +49,10 @@ const Form = ({ to, from }) => {
           onChange={onSelectionChange}
         >
           <option value="1">
-            {selectedFrom} to {selectedTo}
+            {from} to {to}
           </option>
           <option value="2">
-            {selectedTo} to {selectedFrom}
+            {to} to {from}
           </option>
         </select>
         <button
