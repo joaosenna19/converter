@@ -9,11 +9,19 @@ const Form = ({ to, from }) => {
   const onConvertClick = (e) => {
     e.preventDefault();
     const inputValue = document.getElementById("input").value;
+
     const results = converter(
       selectedFrom,
       selectedTo,
       ...inputValue.split(",").map((value) => parseFloat(value.trim()))
     );
+
+    for (const result of results) {
+      if (isNaN(result)) {
+        setResult(["Invalid input"]);
+        return;
+      }
+    }
 
     setResult(results);
   };

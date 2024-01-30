@@ -24,7 +24,7 @@ const converter = (from, to, ...values) => {
         results.push(value * 1.60934);
         break;
       default:
-        throw new Error("Invalid conversion");
+        results.push("Invalid parameters");
     }
   }
 
